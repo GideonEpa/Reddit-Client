@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+
+    border: 1px solid black;
+    padding: 0 40px;
+
+    color: white;
+    background-color: #1A1F3F;
+
+    box-shadow: 10px 10px 10px black;
+}
+
+.container h1 {
+    text-transform: uppercase;
+}
+
+span {
+    color: #FF8A00;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+input {
+    height: 20px;
+}
+
+.img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}

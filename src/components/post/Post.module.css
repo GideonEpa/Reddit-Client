@@ -1,0 +1,13 @@
+.post {
+    background-color: #1A1F3F;
+    width: 90%;
+    height: auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.img {
+    height: auto;
+    width: 70%;
+    object-fit: cover;
+}
