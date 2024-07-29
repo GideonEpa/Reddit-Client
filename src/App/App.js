@@ -18,6 +18,16 @@ function App() {
     fetchTopPosts();
   }, [])
 
+  const [topSubs, setTopSubs] = useState();
+
+  useEffect(() => {
+    async function fetchTopSubs() {
+      const posts = await Reddit.getTopSubs();
+      setTopSubs(posts);
+    }
+    fetchTopSubs();
+  }, [])
+
   return (
     <>
       <NavBar />
@@ -26,8 +36,11 @@ function App() {
         <Feed 
           className={styles.feed}
           topPosts={topPosts}/>}
+        {topSubs &&
         <Subreddits 
-          className={styles.subreddits}/>
+          className={styles.subreddits}
+          topSubs={topSubs}
+          />}
       </div>
     </>
   );

@@ -10,7 +10,7 @@ function NavBar() {
 
     return (
         <div className={styles.container}>
-            <h1>placeholder <span>B</span></h1>
+            <h1>Reddit <span>Lite</span></h1>
             <div className={styles.search}>
                 <input
                     type="text"

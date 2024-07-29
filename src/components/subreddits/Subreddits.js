@@ -1,9 +1,12 @@
 import styles from "./Subreddits.module.css"
+import Subreddit from "./Subreddit.js"
 
-function Subreddits() {
+function Subreddits({topSubs}) {
     return (
         <div className={styles.subreddits}>
-            <h3>SR</h3>
+            {topSubs.map(sub => {
+                return <Subreddit sub={sub.data}/> 
+            })}
         </div>
     )
 }
