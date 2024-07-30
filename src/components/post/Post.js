@@ -1,6 +1,6 @@
 import styles from './Post.module.css';
 import { useState } from 'react';
-import Comments from './Comments.js';
+import Comments from '../comments/Comments.js';
 
 function Post({post}) {
     const { 
@@ -16,10 +16,10 @@ function Post({post}) {
 
     const timePosted = Math.floor((((new Date()).getTime() / 1000) - created_utc) / 60 / 60);
 
-    const [isClicked, setIsClicked] = useState(false);
+    const [showComments, setShowComments] = useState(false);
 
     function handleClick(){
-        setIsClicked(isClicked ? false : true);
+        setShowComments(showComments ? false : true);
     }
     
     return (
@@ -37,9 +37,12 @@ function Post({post}) {
                 className={styles.commentsCount} 
                 onClick={handleClick}>{num_comments} comments</p>
             </div>
-            {isClicked && <Comments 
-                permalink={permalink}
-                isClicked={isClicked}/>}
+            <div className={styles.comments}>
+                {showComments && <Comments
+                    permalink={permalink}
+                    showComments={showComments}
+                    handleClick={handleClick}/>}
+            </div>
         </div>
     )
 }

@@ -5,7 +5,7 @@ import Subreddits from "../components/subreddits/Subreddits.js";
 import Feed from "../components/feed/Feed.js";
 import styles from "./App.module.css"; 
 
-import Reddit from "../Auth/Reddit.js";
+import Reddit from "../Reddit/Reddit.js";
 
 function App() {
   const [topPosts, setTopPosts] = useState();

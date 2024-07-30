@@ -1,0 +1,45 @@
+.comment {
+    height: auto;
+    word-wrap: break-word;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    width: auto;
+}
+
+.commentor {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.commentBody {
+    line-height: 1.3rem;
+    font-size: 16px;
+}
+
+.close {
+    font-weight: 700;
+    font-size: 0.7rem;
+    justify-self: flex-end;
+    position: relative;
+    left: 90%;
+
+    color: white;
+    padding: 10px 10px;
+    background-color: transparent;
+    outline: 0;
+    box-shadow: 0;
+
+    text-transform: uppercase;
+    border: 0;
+}
+
+.close:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.164);
+}

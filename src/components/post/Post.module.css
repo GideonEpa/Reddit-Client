@@ -1,6 +1,6 @@
 .post {
     background: linear-gradient(#4451a573, #1A1F3F);
-    width: 90%;
+    width: 36rem;
     height: auto;
     padding: 20px;
     border-radius: 5px;
@@ -30,6 +30,10 @@ p {
     margin-top: 20px;
 }
 
+.comments {
+    margin-top: 15px;
+}
+
 .commentsCount {
     cursor: pointer;
 }
@@ -37,3 +41,4 @@ p {
 .commentsCount:hover {
     color: white;
 }
+
