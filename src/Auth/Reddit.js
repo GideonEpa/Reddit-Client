@@ -23,7 +23,6 @@ async function getComments(permalink) {
         const response = await fetch(urlToFetch);
         if (response.ok) {
             const data = await response.json();
-            console.log(data)
             return data;
         }
     } catch (e) {

@@ -4,8 +4,10 @@ import styles from "./Feed.module.css"
 function Feed({topPosts}) {
     return (
         <div className={styles.feed}>
-            {topPosts.map(post => {
-                return <Post post={post.data}/>
+            {topPosts.map((post, i) => {
+                return <Post 
+                    key={"post" + i}
+                    post={post.data}/>
             })}
         </div>
     )

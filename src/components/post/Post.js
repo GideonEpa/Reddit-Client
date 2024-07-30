@@ -1,5 +1,6 @@
 import styles from './Post.module.css';
-import Reddit from "../../Auth/Reddit.js";import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import Comments from './Comments.js';
 
 function Post({post}) {
     const { 
@@ -15,30 +16,30 @@ function Post({post}) {
 
     const timePosted = Math.floor((((new Date()).getTime() / 1000) - created_utc) / 60 / 60);
 
-    const [comments, setComments] = useState();
+    const [isClicked, setIsClicked] = useState(false);
 
-    useEffect(() => {
-        async function getComments() {
-            const data = await Reddit.getComments(permalink);
-            setComments(data);
-            console.log(comments)
-        }
-        getComments();
-    }, [])
-
+    function handleClick(){
+        setIsClicked(isClicked ? false : true);
+    }
+    
     return (
         <div className={styles.post}>
-            <span>r/{subreddit}</span>
+            <span>r/{subreddit} {ups}</span>
             <h2>{title}</h2> <br/>
-            <img 
+            {url[8] === "i" && <img 
                 src={url}
-                onError={""}
-                className={styles.img}/>
+                className={styles.img}
+                alt={title}/>}
             <div className={styles.container}>
                 <p>by <span className={styles.author}>{author}</span></p>
                 <p> {timePosted} hours ago</p>
-                <p>{num_comments} comments</p>
+                <p
+                className={styles.commentsCount} 
+                onClick={handleClick}>{num_comments} comments</p>
             </div>
+            {isClicked && <Comments 
+                permalink={permalink}
+                isClicked={isClicked}/>}
         </div>
     )
 }

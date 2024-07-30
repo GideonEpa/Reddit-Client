@@ -4,8 +4,8 @@ import Subreddit from "./Subreddit.js"
 function Subreddits({topSubs}) {
     return (
         <div className={styles.subreddits}>
-            {topSubs.map(sub => {
-                return <Subreddit sub={sub.data}/> 
+            {topSubs.map((sub, i) => {
+                return <Subreddit key={"sub" + i} sub={sub.data}/> 
             })}
         </div>
     )

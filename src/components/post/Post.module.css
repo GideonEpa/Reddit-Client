@@ -28,5 +28,12 @@ p {
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+}
 
+.commentsCount {
+    cursor: pointer;
+}
+
+.commentsCount:hover {
+    color: white;
 }
