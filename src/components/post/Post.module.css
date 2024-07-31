@@ -91,6 +91,11 @@ p {
     fill: var(--accent-color);
 }
 
+.ups svg:hover {
+    transform: scale(1.15);
+    transition: all 0.2s;
+}
+
 .ups p {
     font-weight: 700;
     font-size: 13px;
