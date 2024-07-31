@@ -11,8 +11,44 @@ function Post({ post }) {
         subreddit,
         url,
         created_utc,
-        permalink
+        permalink,
+        selftext,
+        is_video,
+        secure_media,
+        preview,
+        is_gallery
     } = post;
+
+    let displayMedia;
+    if (preview && !is_video) {
+        displayMedia = (
+        <img
+            src={url}
+            className={styles.img}
+            alt={title}/>
+        )
+    } else if (is_video) {        
+        const video = secure_media.reddit_video;
+        const videoUrl = video.fallback_url;
+
+        let type;
+        if (videoUrl.match(".mp4")) {
+            type = "video/mp4"
+        } else if (videoUrl.match(".webm")) {
+            type = "video/webm"
+        } else if (videoUrl.match(".ogg")) {
+            type = "video/ogg"
+        }
+
+        displayMedia = (
+            <video controls autoPlay width={430} height={"auto"} >
+                <source src={videoUrl} type={type}/>
+                Your browser doesn't support this video. Here is a <a href={videoUrl}>link to the video</a> instead.
+            </video>
+        );
+    } else {
+        displayMedia = ""
+    }
 
     const timePosted = Math.floor((((new Date()).getTime() / 1000) - created_utc) / 60 / 60);
 
@@ -39,10 +75,8 @@ function Post({ post }) {
                 <div>
                     <span>r/{subreddit}</span>
                     <h2>{title}</h2> <br />
-                    <img
-                        src={url}
-                        className={styles.img}
-                        alt={title} />
+                    {displayMedia}
+                    <p><i>{selftext}</i></p>
                 </div>
             </div>
             <div className={styles.credentials}>
@@ -50,7 +84,9 @@ function Post({ post }) {
                 <p> {timePosted} hours ago</p>
                 <p
                     className={styles.commentsCount}
-                    onClick={handleClick}>{num_comments} comments</p>
+                    onClick={handleClick}><svg className={styles.commentIcon} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M880-80 720-240H160q-33 0-56.5-23.5T80-320v-480q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v720ZM160-320h594l46 45v-525H160v480Zm0 0v-480 480Z"/></svg>
+                    {num_comments} 
+                </p>
             </div>
             <div className={styles.comments}>
                 {showComments && <Comments
