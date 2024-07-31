@@ -10,7 +10,12 @@ function NavBar() {
 
     return (
         <div className={styles.container}>
-            <h1>Reddit <span>Lite</span></h1>
+            <div className={styles.brand}>
+                <img
+                    src='https://pluspng.com/img-png/reddit-logo-png-white-reddit-icon-free-white-site-logo-icons-512x512.png'
+                    className={styles.img}/>
+                <h1>Reddit <span>Lite</span></h1>
+            </div>
             <div className={styles.search}>
                 <input
                     type="text"

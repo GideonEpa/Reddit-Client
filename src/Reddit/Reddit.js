@@ -1,20 +1,5 @@
 const baseUrl = 'https://www.reddit.com';
 
-async function getTopPosts() {
-    const endpoint = "/r/all/top/.json";
-    const urlToFetch = baseUrl + endpoint;
-
-    try {
-        const response = await fetch(urlToFetch);
-        if (response.ok) {
-            const data = await response.json();
-            return data.data.children;
-        }
-    } catch (e) {
-        console.log(e.message);
-    };
-};
-
 async function getComments(permalink) {
     const endpoint = permalink + ".json"
     const urlToFetch = baseUrl + endpoint;
@@ -45,7 +30,7 @@ async function getTopSubs() {
     };
 };
 
-async function getSubPosts(subName) {
+async function getFeed(subName) {
     const endpoint = `/r/${subName}/top.json`
     const urlToFetch = baseUrl + endpoint;
 
@@ -61,10 +46,9 @@ async function getSubPosts(subName) {
 }
 
 const Reddit = {
-    getTopPosts,
+    getFeed,
     getTopSubs,
     getComments,
-    getSubPosts
 }
 
 export default Reddit;

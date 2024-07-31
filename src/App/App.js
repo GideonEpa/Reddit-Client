@@ -8,15 +8,17 @@ import styles from "./App.module.css";
 import Reddit from "../Reddit/Reddit.js";
 
 function App() {
-  const [topPosts, setTopPosts] = useState();
+  const [selectedSub, setSelectedSub] = useState("all")
+  const [feed, setFeed] = useState();
+
+  async function fetchFeed() {
+    const posts = await Reddit.getFeed(selectedSub);
+    setFeed(posts);
+  }
 
   useEffect(() => {
-    async function fetchTopPosts() {
-      const posts = await Reddit.getTopPosts();
-      setTopPosts(posts);
-    }
-    fetchTopPosts();
-  }, [])
+    fetchFeed()
+  },[selectedSub])
 
   const [topSubs, setTopSubs] = useState();
 
@@ -32,14 +34,16 @@ function App() {
     <>
       <NavBar />
       <div className={styles.main}>
-        {topPosts &&
+        {feed &&
         <Feed 
           className={styles.feed}
-          topPosts={topPosts}/>}
+          feed={feed}/>}
         {topSubs &&
         <Subreddits 
           className={styles.subreddits}
           topSubs={topSubs}
+          setSelectedSub={setSelectedSub}
+          selectedSub={selectedSub}
           />}
       </div>
     </>
