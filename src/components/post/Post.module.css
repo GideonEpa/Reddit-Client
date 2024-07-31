@@ -10,6 +10,8 @@
     height: auto;
     width: 70%;
     object-fit: cover;
+    border-radius: 5px;
+    margin: 20px 0;
 }
 
 p {
@@ -22,7 +24,7 @@ p {
     font-weight: 700;
 }
 
-.container {
+.credentials {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -42,3 +44,26 @@ p {
     color: white;
 }
 
+.ups {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.ups p {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.postBody {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    align-items: start;
+    align-content: start;
+    justify-content: start;
+    justify-items: center;
+    gap: 20px
+}
