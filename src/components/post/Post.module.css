@@ -1,5 +1,5 @@
 .post {
-    background: #1A1F3F;
+    background: var(--primary-color);
     width: 36rem;
     height: auto;
     padding: 20px;
@@ -16,11 +16,11 @@
 
 p {
     font-size: 16px;
-    color: lightgray;
+    color: var(--text-color);
 }
 
 .author {
-    color: white;
+    color: var(--text-color);
     font-weight: 700;
 }
 
@@ -39,7 +39,7 @@ p {
 
 .commentsCount {
     cursor: pointer;
-    background-color: #242b59;
+    background-color: var(--primary-light);
     padding: 10px;
     border-radius: 5px;
     display: flex;
@@ -50,12 +50,13 @@ p {
 }
 
 .commentsCount:hover {
-    background-color: #313b78;
+    background-color: var(--primary-lighter);
 }
 
 .commentIcon {
     width: 20px;
     height: auto;
+    fill: var(--text-color);
 }
 
 .ups {
@@ -66,6 +67,10 @@ p {
     align-items: center;
     margin-top: 20px;
     justify-self: center;
+}
+
+.ups svg {
+    fill: var(--text-color);
 }
 
 .ups p {

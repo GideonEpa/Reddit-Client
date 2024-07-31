@@ -41,13 +41,13 @@ function Post({ post }) {
         }
 
         displayMedia = (
-            <video controls autoPlay width={430} height={"auto"} >
+            <video controls width={430} height={"auto"} >
                 <source src={videoUrl} type={type}/>
                 Your browser doesn't support this video. Here is a <a href={videoUrl}>link to the video</a> instead.
             </video>
         );
     } else {
-        displayMedia = ""
+        displayMedia = null
     }
 
     const timePosted = Math.floor((((new Date()).getTime() / 1000) - created_utc) / 60 / 60);
