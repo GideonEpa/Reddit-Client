@@ -1,13 +1,13 @@
 import Post from "../post/Post.js";
 import styles from "./Feed.module.css"
 
-function Feed({feed}) {
+function Feed({ feed }) {
     return (
         <div className={styles.feed}>
             {feed.map((post, i) => {
-                return <Post 
+                return <Post
                     key={"post" + i}
-                    post={post.data}/>
+                    post={post.data} />
             })}
         </div>
     )

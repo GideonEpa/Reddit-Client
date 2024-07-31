@@ -3,7 +3,7 @@ import Reddit from "../../Reddit/Reddit.js";
 import { useState, useEffect } from "react"
 import Comment from "./Comment.js";
 
-export default function Comments({permalink, handleClick}) {
+export default function Comments({ permalink, handleClick }) {
     const [comments, setComments] = useState();
 
     useEffect(() => {
@@ -19,8 +19,8 @@ export default function Comments({permalink, handleClick}) {
             {comments ? <h3>Comments</h3> : "Loading..."}
             {comments && comments.map((comment, i) => {
                 return (
-                    comment.data.author && 
-                    <Comment key={"comment" + i} comment={comment}/>
+                    comment.data.author &&
+                    <Comment key={"comment" + i} comment={comment} />
                 )
             })}
             {comments && <button className={styles.close} onClick={() => handleClick()}>Close</button>}

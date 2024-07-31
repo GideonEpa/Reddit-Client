@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import NavBar from "../components/navbar/NavBar.js";
 import Subreddits from "../components/subreddits/Subreddits.js";
 import Feed from "../components/feed/Feed.js";
-import styles from "./App.module.css"; 
+import styles from "./App.module.css";
 
 import Reddit from "../Reddit/Reddit.js";
 
@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     fetchFeed()
-  },[selectedSub])
+  }, [selectedSub])
 
   const [topSubs, setTopSubs] = useState();
 
@@ -35,15 +35,15 @@ function App() {
       <NavBar />
       <div className={styles.main}>
         {feed &&
-        <Feed 
-          className={styles.feed}
-          feed={feed}/>}
+          <Feed
+            className={styles.feed}
+            feed={feed} />}
         {topSubs &&
-        <Subreddits 
-          className={styles.subreddits}
-          topSubs={topSubs}
-          setSelectedSub={setSelectedSub}
-          selectedSub={selectedSub}
+          <Subreddits
+            className={styles.subreddits}
+            topSubs={topSubs}
+            setSelectedSub={setSelectedSub}
+            selectedSub={selectedSub}
           />}
       </div>
     </>
