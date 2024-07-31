@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Comments from '../comments/Comments.js';
 
 function Post({ post }) {
+    console.log(post)
     const {
         author,
         num_comments,
@@ -69,10 +70,10 @@ function Post({ post }) {
         <div className={styles.post}>
             <div className={styles.postBody}>
                 <div className={styles.ups}>
-                    <svg onClick={toggleUpvote} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d={path} /></svg>
+                    <svg className={styles.upvote} onClick={toggleUpvote} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d={path} /></svg>
                     <p>{ups > 1000 ? Math.floor((upvoted ? ups + 1 : ups) / 1000 * 10) / 10 + "k" : (upvoted ? ups + 1 : ups)}</p>
                 </div>
-                <div>
+                <div className={styles.postContent}>
                     <span>r/{subreddit}</span>
                     <h2>{title}</h2> <br />
                     {displayMedia}
