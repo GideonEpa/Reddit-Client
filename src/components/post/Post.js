@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Comments from '../comments/Comments.js';
 
 function Post({ post }) {
-    console.log(post)
     const {
         author,
         num_comments,
@@ -17,7 +16,6 @@ function Post({ post }) {
         is_video,
         secure_media,
         preview,
-        is_gallery
     } = post;
 
     let displayMedia;

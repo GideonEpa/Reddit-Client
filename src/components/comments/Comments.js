@@ -12,7 +12,7 @@ export default function Comments({ permalink, handleClick }) {
             setComments(data[1].data.children);
         }
         fetchComments();
-    }, [])
+    }, [permalink])
 
     return (
         <div className={styles.comments}>

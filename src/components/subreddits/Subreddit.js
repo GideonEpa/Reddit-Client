@@ -11,6 +11,7 @@ export default function Subreddit({ sub, setSelectedSub, selectedSub }) {
     return (
         <div onClick={handleClick} className={`${styles.subreddit} ${selectedSub === display_name && styles.selected}`}>
             <img
+                alt={display_name}
                 className={styles.icon}
                 src={icon_img ? icon_img : "https://www.redditstatic.com/avatars/avatar_default_10_DDBD37.png"} />
             <h3>{display_name}</h3>

@@ -12,14 +12,13 @@ function App() {
   const [selectedSub, setSelectedSub] = useState("all")
   const [feed, setFeed] = useState();
 
-  async function fetchFeed() {
-    const posts = await Reddit.getFeed(selectedSub);
-    setFeed(posts);
-  }
-
   useEffect(() => {
+    async function fetchFeed() {
+      const posts = await Reddit.getFeed(selectedSub);
+      setFeed(posts);
+    }
     fetchFeed()
-  }, [selectedSub])
+  },[selectedSub])
 
   const [topSubs, setTopSubs] = useState();
 

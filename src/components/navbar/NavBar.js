@@ -13,6 +13,7 @@ function NavBar() {
         <div className={styles.container}>
             <div className={styles.brand}>
                 <img
+                    alt="logo"
                     src='https://pluspng.com/img-png/reddit-logo-png-white-reddit-icon-free-white-site-logo-icons-512x512.png'
                     className={styles.img} />
                 <h1>Reddit <span>Lite</span></h1>
