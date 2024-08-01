@@ -1,10 +1,33 @@
+/* post container */
 .post {
     background: var(--primary-color);
     width: 38rem;
     height: auto;
     padding: 20px;
     border-radius: 5px;
-    
+}
+
+/* upvotes and post content grid */
+.postBody {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr minmax(0, 9fr);
+    align-items: start;
+    align-content: start;
+    justify-content: start;
+    justify-items: start;
+    gap: 20px;
+}
+
+/* text, image and title */
+.postContent {
+    padding-right: 15px;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.postContent span {
+    font-weight: 700;
 }
 
 .postContent img {
@@ -13,7 +36,6 @@
     object-fit: cover;
     border-radius: 5px;
     margin: 0px 0;
-
     border: 1px solid black;
 }
 
@@ -22,60 +44,16 @@
     height: auto;
     border-radius: 5px;
     object-fit: cover;
-
-
     border: 1px solid black;
-
 }
 
 .postContent p {
     margin-top: 10px;
-}
-
-p {
-    font-size: 16px;
-    color: var(--text-color);
+    font-size: 1rem;
     line-height: 24px;
 }
 
-.author {
-    color: var(--accent-color);
-    font-weight: 700;
-}
-
-.credentials {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 10px 0;
-}
-
-.comments {
-    margin-top: 15px;
-}
-
-.commentsCount {
-    cursor: pointer;
-    background-color: var(--primary-light);
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    font-weight: 600;
-}
-
-.commentsCount:hover {
-    background-color: var(--primary-lighter);
-}
-
-.commentIcon {
-    width: 20px;
-    height: auto;
-    fill: var(--text-color);
-}
+/* Upvotes */
 
 .ups {
     display: flex;
@@ -102,19 +80,44 @@ p {
     font-size: 13px;
 }
 
-
-.postBody {
-    display: grid;
-    grid-template-columns: 1fr 10fr;
-    align-items: start;
-    align-content: start;
-    justify-content: start;
-    justify-items: start;
-    gap: 20px;
-    padding-right: 15px;
+/* Credentials, comment count and time since posted */
+.author {
+    color: var(--accent-color);
+    font-weight: 700;
 }
 
-.postBody span {
-    font-weight: 700;
+.credentials {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px 0;
+}
+
+/* Comments */
+.comments {
+    margin-top: 15px;
+}
+
+.commentsCount {
+    cursor: pointer;
+    background-color: var(--primary-light);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+}
+
+.commentsCount:hover {
+    background-color: var(--primary-lighter);
+}
+
+.commentIcon {
+    width: 20px;
+    height: auto;
+    fill: var(--text-color);
 }
 

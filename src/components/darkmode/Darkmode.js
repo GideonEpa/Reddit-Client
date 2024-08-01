@@ -1,4 +1,4 @@
-import './Darkmode.module.css'
+import styles from './Darkmode.module.css'
 import { useState } from 'react';
 
 export default function Darkmode() {
@@ -18,7 +18,7 @@ export default function Darkmode() {
 
 
     return (
-        <button onClick={handleClick} className='darkmode'>
+        <button onClick={handleClick} className={styles.darkmode}>
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d={mode}/></svg>
         </button>
     )
