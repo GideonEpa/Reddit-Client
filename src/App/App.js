@@ -4,6 +4,7 @@ import NavBar from "../components/navbar/NavBar.js";
 import Subreddits from "../components/subreddits/Subreddits.js";
 import Feed from "../components/feed/Feed.js";
 import styles from "./App.module.css";
+import ScrollToTop from "../components/scrolltotop/ScrollToTop.js";
 
 import Reddit from "../Reddit/Reddit.js";
 
@@ -45,6 +46,7 @@ function App() {
             setSelectedSub={setSelectedSub}
             selectedSub={selectedSub}
           />}
+        <ScrollToTop />
       </div>
     </>
   );
