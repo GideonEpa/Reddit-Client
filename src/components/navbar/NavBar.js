@@ -1,5 +1,6 @@
 import styles from './NavBar.module.css';
 import { useState } from 'react';
+import DarkmodeSwitch from '../darkmode/Darkmode.js';
 
 function NavBar() {
     const [input, setInput] = useState("")
@@ -21,9 +22,7 @@ function NavBar() {
                     type="text"
                     value={input}
                     onChange={handleChange} />
-                <img
-                    src="https://static.vecteezy.com/system/resources/previews/004/511/281/original/default-avatar-photo-placeholder-profile-picture-vector.jpg"
-                    className={styles.img} />
+                <DarkmodeSwitch />
             </div>
         </div>
     )

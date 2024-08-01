@@ -1,0 +1,20 @@
+button {
+    padding: 5px;
+    outline: 0;
+    border: 1px solid var(--text-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--primary-lighter);
+}
+
+button svg {
+    fill: var(--text-color)
+
+}

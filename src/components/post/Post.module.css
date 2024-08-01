@@ -89,6 +89,7 @@ p {
 
 .ups svg {
     fill: var(--accent-color);
+    cursor: pointer;
 }
 
 .ups svg:hover {
