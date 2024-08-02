@@ -2,6 +2,7 @@ import Post from "../post/Post.js";
 import styles from "./Feed.module.css"
 
 function Feed({ feed }) {
+    // Map each post from feed object into its own Post
     return (
         <div className={styles.feed}>
             {feed.map((post, i) => {

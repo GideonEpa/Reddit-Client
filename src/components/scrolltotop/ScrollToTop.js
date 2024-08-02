@@ -1,12 +1,14 @@
 import styles from './ScrollToTop.module.css'
 
 export default function ScrollToTop() {
+    // handler for button click
     let mybutton = document.getElementById("myBtn");
     function handleClick() {
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0;
     }
 
+    // hide button until user has scrolled far enough
     window.onscroll = function() {scrollFunction()};
     function scrollFunction() {
         if (document.body.scrollTop > 1200 || document.documentElement.scrollTop > 1200) {

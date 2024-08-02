@@ -1,11 +1,16 @@
-import styles from "./Comments.module.css"
-import Reddit from "../../Reddit/Reddit.js";
 import { useState, useEffect } from "react"
+
+// CSS Styles
+import styles from "./Comments.module.css"
+
+// Reddit fetch functions
+import Reddit from "../../Reddit/Reddit.js";
+
 import Comment from "./Comment.js";
 
 export default function Comments({ permalink, handleClick }) {
+    // Get comments for post
     const [comments, setComments] = useState();
-
     useEffect(() => {
         async function fetchComments() {
             const data = await Reddit.getComments(permalink);
